@@ -1,0 +1,104 @@
+{% extends "bootstrap.twig" %}
+
+{% block konten %}
+
+
+
+<html>
+<title>Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href="tampil-teori.php" class="w3-bar-item w3-button">Daftar anggota</a>
+  <a href="tampil-buku.php" class="w3-bar-item w3-button">Daftar buku</a>
+  <a href="tampil-peminjam.php" class="w3-bar-item w3-button">Daftar peminjam</a>
+  <a href="tampil-pinjam.php" class="w3-bar-item w3-button">Detail pinjam</a>
+  <a href="tampil-petugas.php" class="w3-bar-item w3-button">Daftar petugas</a>
+  <a href="login.php" class="w3-bar-item w3-button">Logout</a>
+</div>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href='form-teori.php' class="w3-bar-item w3-button">Tambah form</a>
+  <a href='form-buku.php' class="w3-bar-item w3-button">Tambah buku</a>
+  <a href='form-peminjam.php' class="w3-bar-item w3-button">Tambah peminjam</a>
+  <a href='form-pinjam.php' class="w3-bar-item w3-button">Tambah pinjam</a>
+  <a href='form-petugas.php' class="w3-bar-item w3-button">Tambah petugas</a>
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+    <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+    <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+  <div class="w3-container">
+  </div>
+</div>
+
+</div>
+
+<script>
+function openLeftMenu() {
+  document.getElementById("leftMenu").style.display = "block";
+}
+
+function closeLeftMenu() {
+  document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+ <div class="mt-4">
+
+<form action="proses-edit-teori.php?id={{ data.id }}" method="post">
+   <div class='container'>
+   <div class="card">
+  <div class="card-header">
+    Form anggota
+  </div>
+  <div class="card-body">
+  <div class="row mb-3">
+    <label for="text" class="col-sm-1 col-form-label">Nama</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="nama">
+    </div>
+  </div>
+    <div class="row mb-3">
+    <label for="text" class="col-sm-1 col-form-label">Prodi</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="prodi">
+    </div>
+  </div>
+    <div class="row mb-3">
+    <label for="text" class="col-sm-1 col-form-label">Semester</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="semester">
+    </div>
+  </div>
+    <div class="row mb-3">
+    <label for="text" class="col-sm-1 col-form-label">Alamat</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="alamat">
+    </div>
+  </div>
+      <button input type="submit" class="btn btn-primary" name="input" value="simpan">Simpan</button>
+      <button input type="reset"  class="btn btn-danger"  name="kosongkan" value="reset">Reset</button>
+  </div>
+</div>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

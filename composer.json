@@ -1,0 +1,21 @@
+{
+    "name": "acer/uts",
+    "autoload": {
+        "psr-4": {
+            "Acer\\Uts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "awang",
+            "email": "awangherjunie24@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "rakit/validation": "dev-master",
+        "illuminate/database": "10.x-dev",
+        "illuminate/events": "10.x-dev",
+        "twig/twig": "3.x-dev"
+    }
+}
